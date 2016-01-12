@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-select FN in $(senza list zmall-middleware -o tsv | grep -v stack_name | tr -s '\011' ' ' | cut -d" " -f1-2 | tr -s " " ":"); do
+select FN in $(senza list -o tsv | grep -v stack_name | tr -s '\011' ' ' | cut -d" " -f1-2 | tr -s " " ":"); do
 	 echo $REPLY: $FN;
 	 stack_name=`echo "$FN" | cut -d":" -f1`
 	 stack_version=`echo "$FN" | cut -d":" -f2`
